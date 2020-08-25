@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>        
+        const Cat = function (name) {
+            this.name = name;
+        };
+
+        // 請你等等把 function 改成 () => {}
+        const createCat = function(){
+            var animal = new Cat('小米');
+            console.log('cat name is', animal.name);
+            // clear text
+            document.querySelector('#output').innerHTML = "";
+            // append text
+            document.querySelector('#output').appendChild(document.createTextNode(animal.name));
+        };
+    </script>
+</head>
+<body>
+    <button onclick="createCat(event)">create Cat</button>
+    cat is name : <p id="output"></p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>div + div {margin-top: 10px;}</style>
+    <script>
+        var print = function(event){
+            console.log(this);
+            // clear text
+            document.querySelector('#output').innerHTML = "";
+            // append text
+            document.querySelector('#output').appendChild(document.createTextNode(this));
+        };
+
+        var invokePrint = function(event){
+            print();
+        };
+
+        var invokeCallPrint = function(event){
+            var profile = {name: '104'};
+            print.call(profile);
+        };
+
+    </script>
+
+</head>
+<body>
+    <div><button onclick="invokePrint(event)">invoke print</button></div>
+    <div><button onclick="invokeCallPrint(event)">invoke useCall</button></div>
+    <p id="output"></p>
+</body>
+</html>

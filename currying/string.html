@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        const useReplace = substr => newSubstr => string => string.replace(substr, newSubstr);
+        
+        const javaToJs = useReplace(/java/gi)('javascript');
+        const oopToFp = useReplace(/oop/gi)('FP');
+        
+        const onChanged1 = ({target:{value:inputStr}})=>{
+            document.querySelector('#out1').innerText = javaToJs(inputStr);
+        };
+        
+        const onChanged2 = ({target:{value:inputStr}})=>{
+            document.querySelector('#out2').innerText = oopToFp(inputStr);
+        };
+    </script>
+</head>
+<body>
+    java to js : <input type="text" oninput="onChanged1(event)"/><br/>
+    out: <span id="out1"></span><br/><br/>
+    oop to fp : <input type="text" oninput="onChanged2(event)"/><br/>
+    out: <span id="out2"></span>
+</body>
+</html>

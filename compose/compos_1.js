@@ -34,4 +34,4 @@ var createPrimaryButton = compose(
 );
 
 var primaryButton = createPrimaryButton(document.createElement('Button'));
-body.appendChild(primaryButton);
+document.body.appendChild(primaryButton);
