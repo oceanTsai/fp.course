@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const useEventHelper = task => event => {
+            const {target: {value: url, dataset: {open}}} = event;
+            const argsArray = open == null ? [url] : [url , open];
+            task && task.apply(this, argsArray);
+        };
+
+        const gotoFB = useEventHelper((url)=> {
+            location.href = url;
+        });
+
+        const gotoYahoo = useEventHelper(window.open);
+
+        const gotoGoogle = useEventHelper(window.open);
+
+    </script>
+</head>
+<body>
+    <button value="https://yahoo.com.tw" data-open='_blank' onclick="gotoYahoo(event)">yahoo</button>
+    <button value="https://www.google.com" data-open='_blank'  onclick="gotoGoogle(event)">google</button>
+    <button value="https://www.faceboom.com"  onclick="gotoFB(event)">FB</button>
+</body>
+</html>

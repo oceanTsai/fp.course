@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function onClick(event){
+            const { target: { value: company } } = event;
+            switch(company){
+                case 'yahoo':
+                    window.open('https://yahoo.com.tw', '_blank');
+                    break
+                case 'google':
+                    window.open('https://www.google.com', '_blank');
+                    break
+                case 'fb':
+                    location.href = 'https://www.faceboom.com';
+                    break
+            }
+        }
+    </script>
+</head>
+<body>
+    <button value="yahoo" onclick="onClick(event)">yahoo</button>
+    <button value="google" onclick="onClick(event)">google</button>
+</body>
+</html>
