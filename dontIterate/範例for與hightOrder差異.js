@@ -1,5 +1,3 @@
-
-
 for (i=0; i < elements.length; i++) {
     el = $(elements[i]);
     if ( hasProp ) {
@@ -10,16 +8,15 @@ for (i=0; i < elements.length; i++) {
     }
 }
 
-
-
 const nextElements = Array.from(elements).forEach((el)=>{
     hasProp 
         ? $(el).prop('disabled', false)
         : $(el).removeAttr('disabled')
 })
 
-
-
+//--------------------------------
+//
+//--------------------------------
 const list  = [];
 for (i=0; i < elements.length; i++) {
     el = $(elements[i]);
