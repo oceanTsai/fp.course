@@ -9,26 +9,22 @@ const createActionWithProfileState = useState(ProfileState);
 
 
 const actions = {
+    // insert
     insert : createActionWithProfileState((state, picture) => {
-        // 利用 es6 陣列解構
-        // return 
-        console.log('state', state)
-        console.log('picture', picture)
+        state.pictures = [
+            ...state.pictures,
+            picture
+        ];
     }),
     
     modify : createActionWithProfileState((state, id, title) => {
-        // 利用 map
-        // return 
-        console.log('state', state)
-        console.log('id', id)
-        console.log('title', title)
+        state.pictures = state.pictures.map(picture => (
+            picture.id === id  ? {...picture, title} : picture
+        ));
     }),
     
     
     del : createActionWithProfileState((state, id) => {
-        // 利用 filter
-        // return 
-        console.log('state', state)
-        console.log('id', id)
+        state.picture = state.pictures.filter(picture => (picture.id !== id))
     })
 }
