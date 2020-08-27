@@ -2,9 +2,9 @@
 const val = Math.pow(5, 2);
 
 // 柯里化拆解
-const usePowBase = exponent => base => base ** exponent;
+const usePowBase = base => exponent => base ** exponent;
 
 // 
-const powWithBase2 = usePowBase(2);
+const powWithBase5 = usePowBase(5);
 
-console.log(powWithBase2(5));
+console.log(powWithBase5(2));

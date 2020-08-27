@@ -3,7 +3,6 @@ const compose = (...rest) => (x) => (
     rest.reduce((accumulator, f) => f(accumulator), x)
 );
 
-
 const useColor = color => element => {
     element.style.color = color;
     return element
@@ -25,7 +24,6 @@ const useSize = width => height => element => {
     return element
 };
 
-
 var createPrimaryButton = compose(
     useColor('#ffffff'),
     useBackgroundColor('#00afb8'), 
@@ -34,8 +32,5 @@ var createPrimaryButton = compose(
 );
 
 var primaryButton = createPrimaryButton(document.createElement('Button'));
-
-
-
 document.body.innerText = ""
 document.body.appendChild(primaryButton);
