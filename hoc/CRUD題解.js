@@ -1,11 +1,11 @@
-const ProfileState = { 
+const profileState = { 
     pictures: [
       { id: "1", title: "101大樓" }
     ]
 };
 
 const useState = (state) => (process) => (...rest) => process.apply(process, [state, ...rest]);
-const createActionWithProfileState = useState(ProfileState);
+const createActionWithProfileState = useState(profileState);
 
 
 const actions = {
@@ -25,6 +25,6 @@ const actions = {
     
     
     del : createActionWithProfileState((state, id) => {
-        state.picture = state.pictures.filter(picture => (picture.id !== id))
+        state.pictures = state.pictures.filter(picture => (picture.id !== id))
     })
 }

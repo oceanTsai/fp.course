@@ -5,7 +5,7 @@ const ProfileState = {
 };
 
 const useState = (state) => (process) => (...rest) => process.apply(process, [state, ...rest]);
-const createActionWithProfileState = useState(ProfileState);
+const createActionWithProfileState = useState(profileState);
 
 
 const actions = {
